@@ -1,3 +1,4 @@
+/* Global styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,400 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Navigation styles */
+.navmain {
+  z-index: 100;
+  background-color: rgba(0, 50, 100, 0.9);
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adjusted to space-between for better alignment */
+  padding: 0 20px; /* Added padding for spacing */
+}
+
+.navleftcont {
+  display: flex; /* Changed to flex for better alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.navleftcont h5 {
+  margin-left: 8px;
+  color: white;
+}
+.navleftcont h5:hover{
+  cursor: pointer;
+}
+
+.navleftcont img {
+  height: 4vh;
+}
+
+.navrightcont {
+  display: flex; /* Changed to flex for better alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.navrightcont h5 {
+  margin-right: 8px;
+  color: white;
+}
+
+.navrightcont img {
+  height: 4vh;
+}
+
+.navrightcont img:hover {
+  cursor: pointer;
+}
+
+/* Side navigation styles */
+.sidetab {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 20%;
+  height: 90vh; /* Changed height to 90vh to fit under navmain */
+  padding-top: 10px; /* Adjusted for better spacing */
+  padding-left: 10px;
+  border-right: 2px solid rgba(128, 128, 128, 0.689);
+  box-sizing: border-box;
+}
+
+.tabcont {
+  margin-top: 10px;
+  display: block;
+  height: 30px;
+  font-size: 20px; /* Reduced font size for better fit */
+  line-height: 30px; /* Added line-height to vertically center text */
+  align-items: center;
+}
+
+.tabcont:hover {
+  background-color: rgba(128, 128, 128, 0.653);
+  cursor: pointer;
+}
+
+.tabcont p {
+  margin-left: 10px;
+}
+
+/* Main content styles */
+.main-content {
+  z-index: 1;
+  margin-top: 10vh; /* Adjust margin-top to align with the navmain */
+  margin-left: 20%; /* Ensure space for sidetab */
+  width: 80%; /* Adjust width to fit the remaining space */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto; /* Make main content scrollable */
+  height: 90vh; /* Adjusted height to fit within the viewport minus navmain height */
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Add space between items */
+}
+
+.item-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(33.333% - 20px); /* Adjust to fit 3 items per row with gap */
+  box-sizing: border-box;
+}
+.item-card:hover{
+  /* border: 5px solid rgba(0, 0, 0, 0.506); */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.607);
+
+}
+.card-img {
+  height: 200px; /* Adjust height here */
+  width: 100%; /* Make image responsive */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+.item-content {
+  padding: 15px;
+}
+
+.item-content h5 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.item-content p {
+  margin: 5px 0;
+}
+
+.item-content p i {
+  color: #888;
+}
+
+.item-content p b {
+  color: #333;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(165, 165, 165, 0.554); /* Semi-transparent background */
+  backdrop-filter: blur(8px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 90%; 
+  position: relative;
+  z-index: 1001;
+
+}
+
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.modal-section input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.modal-section button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-section button:hover {
+  background: #0056b3;
+}
+
+.modal-section h2{
+  background-color: white;
+}
+
+/* Styles for the mode switch buttons */
+.modal-mode-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-mode-switch button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-mode-switch button.active {
+  background-color: #0056b3;
+}
+
+/* Styles for the modal sections */
+.modal-section {
+  width: 100%;
+}
+
+.modal-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-section input,
+.modal-section select,
+.modal-section button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-section input:focus,
+.modal-section select:focus,
+.modal-section button:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.modal-section button {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-section button:hover {
+  background-color: #218838;
+}
+
+.modal-section select {
+  cursor: pointer;
+}
+
+.modal-close-button-botmain{
+  width: 60px;
+  border: none;
+  margin-left: 40%;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(135, 135, 135, 0.3);
+}
+/* Increase specificity */
+.remove-button {
+  position: relative;
+  display: flex;
+  height: inherit;
+  width: inherit;
+  right: 0px;
+  right: 5px;
+  border-radius: 50%; /* Use 50% for a perfect circle */
+}
+
+.remove-button-but {
+  display: flex;
+  background-color: transparent;
+  height: 30px !important;
+  width: 30px !important;
+  border: 0px solid white;
+  align-items: center;
+}
+
+/* Container to position the counter */
+.count-bot {
+  display: inline-flex; /* Use inline-flex for better alignment and responsiveness */
+  position: relative;
+  bottom: 10px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment */
+}
+
+/* Counter container */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between items, use relative units */
+}
+
+/* Button styling */
+.counter button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem 1rem; /* Use rem for padding to ensure consistency */
+  margin: 0;
+  cursor: pointer;
+  font-size: 1rem; /* Use rem to scale with root font size */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.counter button:hover {
+  background-color: #f8ff2595;
+}
+
+/* Counter value styling */
+.counter-value {
+  font-size: 1.5rem; /* Use rem to scale with root font size */
+  margin: 0 0.5rem; /* Use rem for margins to maintain relative spacing */
+}
+
+/* Ensure the container is flexible and adapts to content */
+.count-bot,
+.counter {
+  max-width: 100%; /* Prevent overflow and adapt to parent container */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+.sort-main{
+  height: 30px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.sort-select{
+  display: inline;
+}
+.sort-main p{
+  display: inline;
+}
+
+.sort-main button{
+  height: 30px;
+  width: 60px;
+  border-radius: 8px;
+  background-color: rgba(0, 50, 100, 0.9);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.084);
+  margin-left: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+.sort-main button:hover{
+  background-color: rgba(100, 0, 0, 0.9);
+}
+
+.totalquant{
+  position: relative;
+  display: inline;
+  font-size: 20px;
+
+}
+.totalprice{
+  display: inline;
+  position: absolute;
+  right: 30px;
+  font-size: 20px;
 }
